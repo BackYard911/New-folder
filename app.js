@@ -17,7 +17,7 @@ const apiKey = process.env.apiKey;
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) =>
-    app.listen(5500, () => {
+    app.listen(process.env.port || 3000, () => {
       console.log("App listening");
     })
   )
