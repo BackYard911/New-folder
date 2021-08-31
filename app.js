@@ -13,11 +13,12 @@ const dbURI = process.env.DBURI;
 const apiUrl = process.env.apiUrl;
 const apiHost = process.env.apiHost;
 const apiKey = process.env.apiKey;
+const port = process.env.port || 5500
 
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) =>
-    app.listen(process.env.port || 5500, () => {
+    app.listen(port, () => {
       console.log("App listening");
     })
   )
